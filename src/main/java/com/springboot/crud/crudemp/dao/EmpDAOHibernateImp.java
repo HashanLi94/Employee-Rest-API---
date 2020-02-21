@@ -29,7 +29,7 @@ public class EmpDAOHibernateImp implements EmployeeDAO {
         Session currentSesseion = entityManager.unwrap(Session.class);
 
         //create the query
-        Query theQuery = currentSesseion.createQuery(String.valueOf(Employee.class));
+        Query <Employee> = currentSesseion.createQuery("from employee", Employee.class);
 
         //execute the query
         List<Employee> employees = theQuery.getResultList();
